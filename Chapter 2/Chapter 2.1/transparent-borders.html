@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transparent borders</title>
+
+    <style>
+      body {
+        background: url('http://csssecrets.io/images/stone-art.jpg');
+      }
+
+      div {
+        background-color: white;
+        /* 默认情况下, 背景会延伸到边框所在区域的下层(边框盒子). 可以设置background-clip属性为padding-box将背景限制为内边距盒子 */
+        background-clip: padding-box;
+        border: 60px solid rgba(174, 0, 85, 0.3);
+
+        max-width: 20em;
+        padding: 2em;
+        margin: 2em auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      Can I haz semi-transparent borders? Pretty please?
+    </div>
+  </body>
+</html>
