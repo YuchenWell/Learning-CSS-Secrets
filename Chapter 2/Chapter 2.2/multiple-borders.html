@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi borders</title>
+
+    <style>
+      div {
+        background-color: green;
+        border: 5px solid darkgray;
+
+        /* 使用box-shadow可以创建任意数量的多重边框 */
+        box-shadow: 0 0 0 10px deeppink, 0 0 0 20px deepskyblue, 0 0 0 30px yellowgreen;
+
+        width: 100px;
+        height: 70px;
+        margin: 50px;
+
+        /* box-shadow产生的投影会贴合元素的圆角 */
+        border-radius: 10px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
