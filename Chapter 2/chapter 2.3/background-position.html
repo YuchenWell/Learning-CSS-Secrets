@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background position</title>
+
+    <style>
+      div {
+        background-color: #58a;
+        background-repeat: no-repeat;
+        background-image: url(http://csssecrets.io/images/code-pirate.svg);
+
+        /* 方案一: 使用background-position设置背景图片的位置 */
+        background-position: right 10px bottom 10px;
+
+        /* 方案二: 一般背景图片的偏移和容器的内边距一致,可以使用background-origin设置背景颜色和图片应用的盒模型 */
+        background-origin: content-box;
+
+        max-width: 10em;
+        min-height: 5em;
+        padding: 10px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>Code Pirate</div>
+  </body>
+</html>
