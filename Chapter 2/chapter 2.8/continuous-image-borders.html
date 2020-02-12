@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>连续的图案边框</title>
+
+    <style>
+      /* prettier-ignore */
+      div {
+        border: 1em solid transparent;
+
+        background-image:
+          /* 用于内边距盒子背景的白色 */
+          linear-gradient(white, white),
+          /* 用于边框 */
+          url(http://csssecrets.io/images/stone-art.jpg);
+
+        background-origin:
+          /* 用于内边距盒子背景的白色 */
+          padding-box,
+          /* 用于边框 */
+          border-box;
+
+        background-clip:
+          /* 用于内边距盒子背景的白色 */
+          padding-box,
+           /* 用于边框 */
+          border-box;
+
+        background-size:
+          /* 用于内边距盒子背景的白色 */
+          auto,
+          /* 用于边框 */
+          cover;
+
+        /* 设置成resizable区域 */
+        overflow: hidden;
+	      resize: both;
+
+        width: 21em;
+        padding: 1em;
+
+      }
+    </style>
+  </head>
+  <body>
+    <!-- cSpell: disable -->
+    <div>
+      Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef
+      beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola ribeye
+      biltong landjaeger. Chuck pork belly sed sausage.
+    </div>
+  </body>
+</html>
