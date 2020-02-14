@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>梯形按钮</title>
+
+    <style>
+      .button {
+        /* background-color: #58a; */
+        position: relative;
+
+        color: white;
+
+        display: inline-block;
+        margin: 2em;
+        padding: 0.5em 1em;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+
+      .button::before {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background-color: #58a;
+        z-index: -1;
+        transform: perspective(0.5em) rotateX(5deg) scale(1.3);
+        transform-origin: center bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="" class="button">Click me</a>
+  </body>
+</html>
