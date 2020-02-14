@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>伪元素方案 * 生成平行四边形</title>
+
+    <style>
+      .button {
+        display: inline-block;
+        padding: 10px 30px;
+        margin: 0px;
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        /* 相对于普通位置定位，没设置top/right/bottom/left时与正常位置相同 */
+        position: relative;
+      }
+
+      .button::before {
+        /* 在选中元素的内容之前插入内容，content属性只能跟伪元素一起使用 */
+        content: '';
+
+        /* 元素相对于position值不为static的第一个祖先元素来定位 */
+        position: absolute;
+        /* 相对于position属性指定的元素的偏移量 */
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+
+        background-color: #58a;
+        transform: skew(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <a href="" class="button">Click me</a>
+    <a href="" class="button">Click me</a>
+  </body>
+</html>

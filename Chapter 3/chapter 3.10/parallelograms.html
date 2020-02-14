@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>嵌套元素方案 * 生成平行四边形</title>
+
+    <style>
+      .button {
+        display: inline-block;
+        padding: 10px 30px;
+        margin: 0px;
+        background-color: #58a;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        transform: skew(45deg);
+      }
+
+      .button > div {
+        transform: skew(-45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <a href="" class="button"><div>Click me</div></a>
+    <a href="" class="button"><div>Click me</div></a>
+  </body>
+</html>
