@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>斜边切角 * 渐变方式</title>
+
+    <style>
+      /* prettier-ignore */
+      div {
+
+        background-image:
+          /* 左上角 */
+          linear-gradient(135deg, transparent 15px, #58a 0),
+          /* 右上角 */
+          linear-gradient(-135deg, transparent 15px, #58a 0),
+          /* 右下角 */
+          linear-gradient(-45deg, transparent 15px, #58a 0),
+          /* 左下角 */
+          linear-gradient(45deg, transparent 15px, #58a 0);
+
+        background-position:
+          /* 左上角 */
+          left top,
+          /* 右上角 */
+          right top,
+          /* 右下角 */
+          right bottom,
+          /* 左下角 */
+          left bottom;
+
+        /* Chrome浏览器上如果使用50% 50%会出现一个水平线，原因不明~~ */
+        background-size:
+          /* 左上角 */
+          55% 55%,
+          /* 右上角 */
+          55% 55%,
+          /* 右下角 */
+          55% 55%,
+          /* 左下角 */
+          55% 55%;
+
+        background-repeat:
+          /* 左上角 */
+          no-repeat,
+          /* 右上角 */
+          no-repeat,
+          /* 右下角 */
+          no-repeat,
+          /* 左下角 */
+          no-repeat;
+
+        padding: 1em 1.2em;
+        max-width: 12em;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      Hey, focus! You’re supposed to be looking at my corners, not reading my text. The text is just placeholder!
+    </div>
+  </body>
+</html>
