@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>不规则投影</title>
+
+    <style>
+      /* prettier-ignore */
+      div {
+        display: inline-flex;
+        flex-direction: column;
+        width: 110px;
+        height: 110px;
+        margin: 20px;
+        text-align: center;
+        justify-content: center;
+
+        background-color: #fb3;
+
+        /* 相对于普通位置定位，没设置top/right/bottom/left时与正常位置相同 */
+        position: relative;
+
+        box-sizing: border-box;
+
+        /* 使用box-shadow会出错，无法符合要求 */
+        /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); */
+
+        /* 使用filter的drop-shadow CSS函数可以满足要求 */
+        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+      }
+
+      .speech {
+        border-radius: 10px;
+      }
+
+      .speech::before {
+        content: '';
+
+        /* 元素相对于position值不为static的第一个祖先元素来定位 */
+        position: absolute;
+        /* 相对于position属性指定的元素的偏移量 */
+        top: 1.5em;
+        right: -0.7em;
+
+        border: 0.7em solid transparent;
+        border-left-color: #fb3;
+        border-right-width: 0;
+      }
+
+      .dotted {
+        background: transparent;
+        border: 0.3em dotted #fb3;
+      }
+
+      /* prettier-ignore */
+      .cutout {
+        background-color: transparent;
+
+        background-image:
+          /* 右上角 */
+          linear-gradient(-135deg, transparent 15px, #fb3 0),
+          /* 右下角 */
+          linear-gradient(-45deg, transparent 15px, #fb3 0),
+          /* 左上角 */
+          linear-gradient(135deg, transparent 15px, #fb3 0),
+          /* 左下角 */
+          linear-gradient(45deg, transparent 15px, #fb3 0);
+
+        background-position:
+          /* 右上角 */
+          right top,
+          /* 右下角 */
+          right bottom,
+          /* 左上角 */
+          left top,
+          /* 左下角 */
+          left bottom;
+
+        background-size:
+          /* 右上角 */
+          55% 55%,
+          /* 右下角 */
+          55% 55%,
+          /* 左上角 */
+          55% 55%,
+          /* 左下角 */
+          55% 55%;
+
+        background-repeat:
+          /* 右上角 */
+          no-repeat,
+          /* 右下角 */
+          no-repeat,
+          /* 左上角 */
+          no-repeat,
+          /* 左下角 */
+          no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="speech">Speech bubble</div>
+    <div class="dotted">Dotted border</div>
+    <div class="cutout">Cutout corners</div>
+  </body>
+</html>
