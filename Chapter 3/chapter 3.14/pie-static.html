@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>静态饼图</title>
+
+    <style>
+      @keyframes spin {
+        to {
+          transform: rotate(0.5turn);
+        }
+      }
+
+      @keyframes bg {
+        50% {
+          background-color: #58a;
+        }
+      }
+
+      .pie {
+        /* 默认颜色 左边半圆颜色 颜色1 */
+        background-color: yellowgreen;
+        /* 默认颜色 右边半圆颜色 颜色2 */
+        background-image: linear-gradient(to right, transparent 50%, #58a 0);
+
+        margin: 40px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+      }
+
+      .pie::before {
+        content: '';
+
+        /* 此元素将显示为块级元素，此元素前后会带有换行符 */
+        display: block;
+
+        margin-left: 50%;
+        width: 50%;
+        height: 100%;
+
+        /* 初始颜色 颜色1 */
+        background-color: inherit;
+
+        border-top-right-radius: 100% 50%;
+        border-bottom-right-radius: 100% 50%;
+
+        /* 选择的圆点为圆心 */
+        transform-origin: 0 50%;
+
+        animation: spin 0.5s linear, bg 1s step-end;
+        /* 动画初始状态为暂停 */
+        animation-play-state: paused;
+        /* 动画延迟继承自pie元素，由脚本设置！ */
+        animation-delay: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pie">20%</div>
+    <div class="pie">60%</div>
+
+    <script>
+      document.querySelectorAll('.pie').forEach(pie => {
+        const percent = parseFloat(pie.textContent) / 100;
+        pie.style.animationDelay = '-' + percent + 's';
+      });
+    </script>
+  </body>
+</html>

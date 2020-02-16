@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动态饼图</title>
+
+    <style>
+      @keyframes spin {
+        to {
+          transform: rotate(0.5turn);
+        }
+      }
+
+      @keyframes bg {
+        50% {
+          background-color: #655;
+        }
+      }
+
+      .pie {
+        /* 默认颜色 左边半圆颜色 颜色1 */
+        background-color: yellowgreen;
+        /* 默认颜色 右边半圆颜色 颜色2 */
+        background-image: linear-gradient(to right, transparent 50%, #655 0);
+
+        margin: 40px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+      }
+
+      .pie::before {
+        content: '';
+
+        /* 此元素将显示为块级元素，此元素前后会带有换行符 */
+        display: block;
+
+        margin-left: 50%;
+        height: 100%;
+        background-color: inherit;
+
+        /* 简写方式 border-radius: 0 100% 100% 0 / 50%; */
+        border-top-right-radius: 100% 50%;
+        border-bottom-right-radius: 100% 50%;
+
+        /* 选择的圆点为圆心 */
+        transform-origin: 0% 50%;
+
+        animation: spin 3s linear infinite, bg 6s step-end infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pie"></div>
+  </body>
+</html>
