@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>毛玻璃效果</title>
+
+    <style>
+
+      body, main::before {
+        /* 伪元素也应用背景图片 */
+        background-image: url('http://csssecrets.io/images/tiger.jpg');
+
+        /* 缩放背景图片以完全覆盖背景区，可能背景图片部分看不见。
+         * 背景图以它的全部宽或者高覆盖所在容器。
+         * 当容器和背景图比例不同时，背景图的 左/右 或者 上/下 部分会被裁剪。
+         */
+        background-size: cover;
+
+        /* 决定背景图像的位置是在视口内固定，还是随着包含它的区块滚动。 */
+        background-attachment: fixed;
+
+      }
+
+      main {
+        position: relative;
+
+        margin: 0 auto;
+	      padding: 1em;
+        max-width: 23em;
+        font: 150%/1.6 Baskerville, Palatino, serif;
+        margin-top: 5em;
+        border-radius: .3em;
+
+        /* 避免背景的模糊效果超过容器 */
+        overflow: hidden;
+
+        background: hsla(0,0%,100%,.25) border-box;
+
+        box-shadow:
+          0 0 0 1px hsla(0, 0%, 100%, .3) inset,
+	        0 .5em 1em rgba(0, 0, 0, 0.6);
+
+	      text-shadow: 0 1px 1px hsla(0,0%,100%, .3);
+      }
+
+      main::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+
+
+        filter: blur(10px);
+      }
+
+      blockquote {
+        font-style: italic
+      }
+
+      blockquote cite {
+         font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <blockquote>
+        “The only way to get rid of a temptation is to yield to it.
+        Resist it, and your soul grows sick with longing for the things it has forbidden to itself,
+        with desire for what its monstrous laws have made monstrous and unlawful.”
+        </em>
+        <footer>
+          —
+          <cite>Oscar Wilde, The Picture of Dorian Gray</cite>
+        </footer>
+      </blockquote>
+     </main>
+  </body>
+</html>
