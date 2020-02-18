@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>染色效果 - 基于混合</title>
+
+    <style>
+      div {
+        width: 640px;
+        height: 440px;
+
+        background-image: url(http://csssecrets.io/images/tiger.jpg);
+        background-color: hsl(335, 100%, 50%);
+
+        /* 缩放背景图片以完全覆盖背景区，可能背景图片部分看不见。
+         * 背景图以它的全部宽或者高覆盖所在容器。
+         * 当容器和背景图比例不同时，背景图的 左/右 或者 上/下 部分会被裁剪。
+         */
+        background-size: cover;
+
+        /* 定义该元素的背景图片和背景色如何混合 */
+        background-blend-mode: luminosity;
+
+        transition: 1s background-color;
+      }
+
+      div:hover {
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

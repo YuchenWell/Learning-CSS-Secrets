@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>染色效果 - 基于滤镜</title>
+
+    <style>
+      img {
+        max-width: 640px;
+        filter: sepia() saturate(4) hue-rotate(295deg);
+        transition: filter 1s;
+      }
+
+      img:hover {
+        filter: none;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="http://csssecrets.io/images/tiger.jpg" />
+  </body>
+</html>
