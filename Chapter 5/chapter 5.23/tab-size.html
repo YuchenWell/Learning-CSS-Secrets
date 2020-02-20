@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab宽度</title>
+
+    <style>
+      pre {
+        padding: 0.5em;
+        background-color: hsl(20, 50%, 95%);
+        font-family: Consolas, Monaco, monospace;
+
+        line-height: 1.5em;
+
+        /* 使用渐变模拟条纹 */
+        background-image: linear-gradient(rgba(120, 0, 0, 0.1), 50%, transparent 0);
+
+        /* 背景的大小是2倍的line-height */
+        background-size: 100% 3em;
+
+        /* 背景区域为内容盒子 */
+        background-origin: content-box;
+
+        /* IE,Edge不支持tab-size，Chrome不支持这个属性的动画，VS Code我的常用设置会把Tab转化为空格~~~ */
+        tab-size: 4;
+      }
+
+      code {
+        font: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <pre><code>// Default tab size
+      while (true) {
+        var d = new Date();
+        if (d.getDate()==1 &amp;&amp;
+            d.getMonth()==3) {
+          alert("TROLOLOL");
+        }
+      }</code></pre>
+  </body>
+</html>
