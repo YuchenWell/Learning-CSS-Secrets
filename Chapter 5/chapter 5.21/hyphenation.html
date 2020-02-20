@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>连字符断行</title>
+
+    <style>
+      div {
+        width: 8.7em;
+        font: 180%/1.4 Baskerville, serif;
+        text-align: justify;
+
+        border: 1px solid salmon;
+        margin: 0.5em;
+        padding: 0.5em;
+      }
+
+      /* Chrome only supported on Android & Mac platform!!!! */
+      .auto-hyphens {
+        hyphens: auto;
+      }
+
+      .none-hyphens {
+        hyphens: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="auto-hyphens">“The only way to get rid of a temptation is to yield to it.”</div>
+    <div class="none-hyphens">“The only way to get rid of a temptation is to yield to it.”</div>
+
+    <div>Chrome only supported on Android & Mac platform!!!!</div>
+  </body>
+</html>
