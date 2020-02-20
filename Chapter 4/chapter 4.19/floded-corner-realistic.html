@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>折角效果 - 非45度折角</title>
+
+    <style>
+      /* prettier-ignore */
+      div {
+        /* 倒角 */
+        background-image: linear-gradient(-150deg, transparent 1.5em, #58a 0);
+
+        position: relative;
+
+        width: 12em;
+        padding: 2em;
+        color: white;
+
+        border-radius: 0.5em;
+      }
+
+      div::before {
+        content: '';
+
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        border-bottom-left-radius: 0.5em;
+
+        /* 折角 */
+        background-image: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, 0.4) 0);
+        /* background-position: top right; */
+        /* background-repeat: no-repeat; */
+
+        height: 3em;
+        width: 1.73em;
+        transform: translateY(-1.3em) rotate(-30deg);
+        transform-origin: bottom right;
+      }
+    </style>
+  </head>
+  <body>
+    <div>“The only way to get rid of a temptation is to yield to it.” — Oscar Wilde, The Picture of Dorian Gray</div>
+  </body>
+</html>
