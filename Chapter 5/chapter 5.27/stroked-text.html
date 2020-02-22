@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>空心字效果</title>
+
+    <style>
+      body {
+        background: #ae0055;
+        font: bold 200%/1 Rockwell, serif;
+        font-size: 1000%;
+      }
+
+      h1 {
+        margin: 0;
+        color: white;
+      }
+
+      h1:first-child {
+        text-shadow: 5px 5px black, -5px -5px black, 5px -5px black, -5px 5px black;
+      }
+
+      h1 use {
+        stroke: black;
+        stroke-width: 6;
+        stroke-linejoin: round;
+      }
+
+      h1 text {
+        fill: currentColor;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS</h1>
+
+    <h1>
+      <svg overflow="visible" width="2em" height="1.2em">
+        <use xlink:href="#css" />
+        <text id="css" y="1em">CSS</text>
+      </svg>
+    </h1>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文本外发光效果</title>
+
+    <style>
+      body {
+        background: #ae0055;
+        font: bold 500%/1 Rockwell, serif;
+      }
+
+      .a a {
+        color: #ffc;
+        text-decoration: none;
+        transition: 1s;
+      }
+
+      .a a:hover {
+        text-shadow: 0 0 0.1em, 0 0 0.3em;
+      }
+
+      strong {
+        font-size: 50%;
+        color: white;
+      }
+
+      .b a {
+        color: #ffc;
+        text-decoration: none;
+        transition: 1s;
+      }
+
+      .b a:hover {
+        filter: blur(0.05em);
+      }
+    </style>
+  </head>
+  <body>
+    <p class="a">
+      <a href="http://csssecrets.io">Glow</a> <strong>使用多重text-shadow实现, hover时保留原始文本</strong>
+    </p>
+
+    <p class="b"><a href="http://csssecrets.io">Glow</a> <strong>使用filter实现, hover时隐藏原始文本</strong></p>
+  </body>
+</html>
