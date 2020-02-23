@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>自定义复选框 - 复选框hack</title>
+
+    <style>
+      body {
+        font: 150%/1.6 sans-serif;
+      }
+
+      input[type='checkbox'] + label::before {
+        /* 不换行空格 */
+        content: '\a0';
+
+        /* 行内块级元素, 不能使用inline的原因是需要设置width和height,不能使用block的原因是复选框不需要换行 */
+        display: inline-block;
+
+        /* 该属性的应用值是这个无单位数字<数字>乘以该元素的字体大小 */
+        line-height: 0.65;
+
+        /* 定义一个块元素首行文本内容之前的缩进量 */
+        text-indent: 0.15em;
+
+        /* vertical-align 只对行内元素、表格单元格元素生效：不能用它垂直对齐块级元素(display设置为block时这个属性无效)。 */
+        vertical-align: 0.05em;
+
+        width: 0.8em;
+        height: 0.8em;
+        background-color: silver;
+        margin-right: 0.2em;
+        border-radius: 0.2em;
+      }
+
+      input[type='checkbox']:checked + label::before {
+        /* 特殊字符: ✓ */
+        content: '\2713';
+        background-color: yellowgreen;
+      }
+
+      input[type='checkbox']:focus + label::before {
+        box-shadow: 0 0 0.1em 0.1em #58a;
+      }
+
+      /* 应该避免使用的方法 */
+      input[type='checkbox']:nth-child(1) {
+        /* clip属性只适用于position:absolute的元素。 */
+        position: absolute;
+
+        /* 该特性已经从Web标准中删除, 尽量不要使用该特性。建议使用clip-path。 */
+        /* clip属性只适用于position:absolute的元素。 */
+        /* 不使用display: none的原因是那样会把它从tab建 */
+        clip: rect(0, 0, 0, 0);
+      }
+
+      /* 建议使用d的方法 */
+      input[type='checkbox']:not(:nth-child(1)) {
+        /* 元素会被移出正常文档流，并不为元素预留空间，
+         * 通过指定元素相对于最近的非 static 定位祖先元素的偏移，来确定元素位置。
+         * 绝对定位的元素可以设置外边距（margins），且不会与其他边距合并
+         */
+        position: absolute;
+
+        /* 创建一个只有元素的部分区域可以显示的剪切区域, clip-path路径范围内的内容可见 */
+        clip-path: circle(0%);
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="awesome" autofocus />
+    <label for="awesome">Awesome!</label>
+    <br />
+
+    <input type="checkbox" id="awesome2" checked />
+    <label for="awesome2">Awesome!</label>
+    <br />
+
+    <input type="checkbox" id="awesome3" disabled />
+    <label for="awesome3">Awesome!</label>
+    <br />
+
+    <input type="checkbox" id="awesome4" checked disabled />
+    <label for="awesome4">Awesome!</label>
+  </body>
+</html>

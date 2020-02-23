@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>开关式按钮</title>
+
+    <style>
+      body {
+        margin: 1em 0.5em;
+        font: 150%/1.6 sans-serif;
+      }
+
+      input[type='checkbox'] {
+        position: absolute;
+        clip-path: circle(0);
+      }
+
+      input[type='checkbox'] + label {
+        background-color: #ccc;
+        padding: 0.5em 1em;
+        margin-left: 0.5em;
+        cursor: pointer;
+        border-radius: 0.1em;
+      }
+
+      input[type='checkbox']:checked + label {
+        background: #bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="awesome" autofocus />
+    <label for="awesome">Awesome!</label>
+
+    <input type="checkbox" id="awesome2" checked />
+    <label for="awesome2">Awesome!</label>
+  </body>
+</html>
