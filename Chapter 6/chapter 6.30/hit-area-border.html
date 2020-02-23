@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>扩大可点击范围 - border方法</title>
+
+    <style>
+      button {
+        cursor: pointer;
+        color: white;
+        padding: 0.3em 0.5em;
+        background: #58a;
+        border-radius: 50%;
+
+        /* border可以增加点击区域范围,但是效果不够好,会让按钮变大 */
+        border: 10px solid rgb(240, 240, 240);
+
+        /* 将背景颜色限制的内边距盒子范围内 */
+        background-clip: padding-box;
+
+        /* box-shadow不能增加点击区域范围 */
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset;
+      }
+    </style>
+  </head>
+  <body>
+    <button>+</button>
+    <button>-</button>
+  </body>
+</html>

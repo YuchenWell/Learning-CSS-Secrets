@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>扩大可点击范围 - 伪元素方法</title>
+
+    <style>
+      button {
+        cursor: pointer;
+        color: white;
+        padding: 0.3em 0.5em;
+        background: #58a;
+        border-radius: 50%;
+        margin-left: 10px;
+
+        /* border可以增加点击区域范围,但是效果不够好,会让按钮变大 */
+        border: 1px solid rgb(200, 200, 200);
+
+        position: relative;
+      }
+
+      /* 伪元素可以响应鼠标事件 */
+      button::before {
+        content: '';
+
+        position: absolute;
+        top: -10px;
+        bottom: -10px;
+        left: -10px;
+        right: -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button>+</button>
+    <button>-</button>
+  </body>
+</html>
