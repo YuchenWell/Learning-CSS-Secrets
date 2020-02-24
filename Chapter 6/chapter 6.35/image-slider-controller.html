@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片对比控件 - input 控件方案</title>
+
+    <style>
+      .image-slider {
+        display: inline-block;
+        position: relative;
+      }
+
+      .image-slider > div {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        /*  */
+        width: 50%;
+
+        /* overflow不是visible时,才可以设置resize */
+        overflow: hidden;
+
+        resize: horizontal;
+      }
+
+      .image-slider > img {
+        display: block;
+      }
+
+      /* NG-Zorro是用div实现的滑动条Slider */
+      .image-slider > input {
+        display: absolute;
+
+        bottom: 15px;
+        left: 0;
+        width: 100%;
+
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image-slider">
+      <div><img src="http://csssecrets.io/images/adamcatlace-before.jpg" /></div>
+      <img src="http://csssecrets.io/images/adamcatlace.jpg" />
+      <input type="range" />
+    </div>
+
+    <script>
+      let range = document.querySelector('.image-slider > input[type="range"]');
+      let div = document.querySelector('.image-slider > div');
+
+      range.addEventListener('input', e => {
+        div.style.width = e.target.value + '%';
+      });
+    </script>
+  </body>
+</html>
