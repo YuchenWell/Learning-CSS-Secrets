@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>根据兄弟元素的数量来设置样式</title>
+
+    <style>
+      div {
+        margin: 2em;
+      }
+
+      span {
+        background-color: #d6e055;
+        color: white;
+        height: 2em;
+        width: 2em;
+        font-size: 200%;
+        font-weight: bold;
+
+        /* 设置水平垂直居中 */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* 方法1: 推荐方式 */
+      /* :nth-child(), n+b这种形式的表达式可以选中从第b个元素开始的所有子元素 */
+      /* div > span:nth-child(n + 4) {
+        background-color: #ae0055;
+      } */
+
+      /* 方法2 */
+      /* 相邻兄弟元素选择器 ~ , 可以选中在它之后的所有兄弟元素 */
+      div > span:nth-child(4),
+      div > span:nth-child(4) ~ span {
+        background-color: #ae0055;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+    </div>
+    <div>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+    </div>
+    <div>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
+      <span>6</span>
+      <span>7</span>
+      <span>8</span>
+    </div>
+  </body>
+</html>
