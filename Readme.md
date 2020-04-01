@@ -3,11 +3,11 @@
 ## Chapter 2 背景和边框
 
 1. [半透明边框](./Chapter%202/Chapter%202.1/transparent-borders.html)
-   默认情况下, 背景会延伸到边框所在区域的下层(边框盒子). 可以设置`background-clip: padding-box;`将背景限制为内边距盒子。
+  默认情况下, 背景会延伸到边框所在区域的下层(边框盒子). 可以设置`background-clip: padding-box;`将背景限制为内边距盒子。
 
 2. [多重边框](Chapter%202/chapter%202.2/multiple-borders.html)
-   使用`box-shadow`可以创建任意数量的多重边框, 且`box-shadow`产生的投影会贴合元素的圆角。
-   使用`outline`实现的边框不会贴合元素的圆角。
+  使用`box-shadow`可以创建任意数量的多重边框, 且`box-shadow`产生的投影会贴合元素的圆角。
+  使用`outline`实现的边框不会贴合元素的圆角。
 
 3. [灵活的背景定位](Chapter%202/chapter%202.3/background-position.html)
   3.1. 可以使用`background-position`定位。
@@ -18,21 +18,21 @@
   所以可以使用`outline`模拟边框，`box-shadow`来填充`outline`和`padding-box`之间的空隙。
 
 5. 条纹背景
-   5.1 [水平条纹背景](Chapter%202/chapter%202.5/horizontal-stripes.html)
-   5.2 [垂直条纹背景](Chapter%202/chapter%202.5/vertical-stripes.html)
-   5.3* [45度斜向条纹背景](Chapter%202/chapter%202.5/diagonal-stripes.html)
-        需要指定条纹背景贴片的大小。
-   5.4* [60度斜向条纹背景](Chapter%202/chapter%202.5/diagonal-stripes-60deg.html)
-        需要指定条纹背景贴片的大小。
+  5.1 [水平条纹背景](Chapter%202/chapter%202.5/horizontal-stripes.html)
+  5.2 [垂直条纹背景](Chapter%202/chapter%202.5/vertical-stripes.html)
+  5.3* [45度斜向条纹背景](Chapter%202/chapter%202.5/diagonal-stripes.html)
+    需要指定条纹背景贴片的大小。
+  5.4* [60度斜向条纹背景](Chapter%202/chapter%202.5/diagonal-stripes-60deg.html)
+    需要指定条纹背景贴片的大小。
 
 6. 复杂背景图案
-   6.1* [蓝色网布](Chapter%202/chapter%202.6/blueprint.html)
-      使用四个`linear-gradient`模拟。
-   6.2* [波点](Chapter%202/chapter%202.6/polka.html)
-      使用两个`radial-gradient`模拟。
+  6.1* [蓝色网布](Chapter%202/chapter%202.6/blueprint.html)
+    使用四个`linear-gradient`模拟。
+  6.2* [波点](Chapter%202/chapter%202.6/polka.html)
+    使用两个`radial-gradient`模拟。
 
 7. [伪随机背景](Chapter%202/chapter%202.7/cicada-stripes.html)
-   使用无法整除的`background-size`和`linear-gradient`尺寸来模拟。
+  使用无法整除的`background-size`和`linear-gradient`尺寸来模拟。
 
 8. [连续的图像边框](Chapter%202/chapter%202.8/continuous-image-borders.html) [信封边框](Chapter%202/chapter%202.8/vintage-envelop.html) [蚂蚁行军边框](Chapter%202/chapter%202.8/marching-ant.html)
   8.1 `background-clip`: `padding-box` / `content-box` / `border-box`
@@ -52,32 +52,32 @@
 
 11. [菱形图片](Chapter%203/chapter%203.11/diamond-images.html)
 
-    ``` html
-      <div class="diamond">
-        <img src="http://csssecrets.io/images/adamcatlace.jpg" />
-      </div>
-    ```
+  ``` html
+  <div class="diamond">
+    <img src="http://csssecrets.io/images/adamcatlace.jpg" />
+  </div>
+  ```
 
-    ``` css {highlight=[7-8,13]}
-      .diamond {
-        width: 250px;
-        height: 250px;
-        margin: 100px;
-        border: 1px dashed gray;
+  ``` css {highlight=[7-8,13]}
+  .diamond {
+    width: 250px;
+    height: 250px;
+    margin: 100px;
+    border: 1px dashed gray;
 
-        overflow: hidden;
-        transform: rotate(45deg);
-      }
+    overflow: hidden;
+    transform: rotate(45deg);
+  }
 
-      .diamond > img {
-        max-width: 100%;
-        transform: rotate(-45deg) scale(1.42);
-      }
-    ```
+  .diamond > img {
+    max-width: 100%;
+    transform: rotate(-45deg) scale(1.42);
+  }
+  ```
 
-    需要额外嵌套一个HTML元素，使用`transform: rotate(45deg);`旋转。
-    图片使用一次反向的变形`transform: rotate(-45deg);`，来抵消容器的变形。
-    且由于矩形旋转后，图片的宽度应该由边长变成对角线长，所以需要使用`transform：scale(1.42)`放大。
+  需要额外嵌套一个HTML元素，使用`transform: rotate(45deg);`旋转。
+  图片使用一次反向的变形`transform: rotate(-45deg);`，来抵消容器的变形。
+  且由于矩形旋转后，图片的宽度应该由边长变成对角线长，所以需要使用`transform：scale(1.42)`放大。
 
 12. [切角效果](Chapter%203/chapter%203.12/bevel-corners-gradients.html) [弧形切角效果](Chapter%203/chapter%203.12/scoop-corners.html) [SVG切角方案](Chapter%203/chapter%203.12/bevel-corners-svg.html)
   斜边切角使用`linear-gradient`模拟，弧边切角使用`radial-gradient`模拟。
@@ -85,100 +85,100 @@
 
 13. [梯形标签页](Chapter%203/chapter%203.13/trapezoid-tabs.html)
 
-    ``` html
-      <nav class="both">
-        <a href="#">Home</a>
-        <a href="#" class="selected">Projects</a>
-        <a href="#">About</a>
-      </nav>
-      <main>
-        Content area
-      </main>
-    ```
+  ``` html
+  <nav class="both">
+    <a href="#">Home</a>
+    <a href="#" class="selected">Projects</a>
+    <a href="#">About</a>
+  </nav>
+  <main>
+    Content area
+  </main>
+  ```
 
-    ``` css {highlight=[2-3,12-21,26]}
-      nav > a {
-        /* 相对于普通位置定位，没设置top/right/bottom/left时与正常位置相同 */
-        position: relative;
+  ``` css {highlight=[2-3,12-21,26]}
+  nav > a {
+    /* 相对于普通位置定位，没设置top/right/bottom/left时与正常位置相同 */
+    position: relative;
 
-        /* 左右边距为负值，缩小tab导航标签的间距 */
-        margin: 0 -0.3em;
+    /* 左右边距为负值，缩小tab导航标签的间距 */
+    margin: 0 -0.3em;
 
-        display: inline-block;
-      }
+    display: inline-block;
+  }
 
-      nav > a::before {
-        /* 在选中元素的内容之前插入内容，content属性只能跟伪元素一起使用 */
-        content: '';
+  nav > a::before {
+    /* 在选中元素的内容之前插入内容，content属性只能跟伪元素一起使用 */
+    content: '';
 
-        /* 元素相对于position值不为static的第一个祖先元素来定位 */
-        position: absolute;
-        /* 相对于position属性指定的元素的偏移量 */
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+    /* 元素相对于position值不为static的第一个祖先元素来定位 */
+    position: absolute;
+    /* 相对于position属性指定的元素的偏移量 */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
-        /* 使用负值降低优先级 */
-        z-index: -1;
+    /* 使用负值降低优先级 */
+    z-index: -1;
 
-        transform: perspective(0.5em) rotateX(5deg) scale(1.2, 1.3);
-      }
-    ```
+    transform: perspective(0.5em) rotateX(5deg) scale(1.2, 1.3);
+  }
+  ```
 
 14. [动态饼图](Chapter%203/chapter%203.14/pie-animated.html) [静止饼图](Chapter%203/chapter%203.14/pie-static.html)
 
-``` html
+  ``` html
   <div class="pie">20%</div>
-```
+  ```
 
-``` css {highlight=[6-9]]}
-      @keyframes spin { to { transform: rotate(0.5turn); }}
+  ``` css {highlight=[6-9]]}
+  @keyframes spin { to { transform: rotate(0.5turn); }}
 
-      @keyframes bg { 50% { background-color: #655; }}
+  @keyframes bg { 50% { background-color: #655; }}
 
-      .pie {
-        /* 默认颜色 左边半圆颜色 颜色1 */
-        background-color: yellowgreen;
-        /* 默认颜色 右边半圆颜色 颜色2 */
-        background-image: linear-gradient(to right, transparent 50%, #655 0);
+  .pie {
+    /* 默认颜色 左边半圆颜色 颜色1 */
+    background-color: yellowgreen;
+    /* 默认颜色 右边半圆颜色 颜色2 */
+    background-image: linear-gradient(to right, transparent 50%, #655 0);
 
-        margin: 40px;
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-      }
+    margin: 40px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
 
-      .pie::before {
-        content: '';
+  .pie::before {
+    content: '';
 
-        /* 此元素将显示为块级元素，此元素前后会带有换行符 */
-        display: block;
+    /* 此元素将显示为块级元素，此元素前后会带有换行符 */
+    display: block;
 
-        margin-left: 50%;
-        width: 50%;
-        height: 100%;
+    margin-left: 50%;
+    width: 50%;
+    height: 100%;
 
-        /* 初始颜色 颜色1 */
-        background-color: inherit;
+    /* 初始颜色 颜色1 */
+    background-color: inherit;
 
-        border-top-right-radius: 100% 50%;
-        border-bottom-right-radius: 100% 50%;
+    border-top-right-radius: 100% 50%;
+    border-bottom-right-radius: 100% 50%;
 
-        /* 选择的圆点为圆心 */
-        transform-origin: 0 50%;
+    /* 选择的圆点为圆心 */
+    transform-origin: 0 50%;
 
-        animation: spin 0.5s linear, bg 1s step-end;
-        /* 动画初始状态为暂停 */
-        animation-play-state: paused;
-        /* 动画延迟继承自pie元素，由脚本设置！ */
-        animation-delay: inherit;
-      }
-```
+    animation: spin 0.5s linear, bg 1s step-end;
+    /* 动画初始状态为暂停 */
+    animation-play-state: paused;
+    /* 动画延迟继承自pie元素，由脚本设置！ */
+    animation-delay: inherit;
+  }
+  ```
 
-``` js
-    document.querySelectorAll('.pie').forEach(pie => {
-        const percent = parseFloat(pie.textContent) / 100;
-        pie.style.animationDelay = '-' + percent + 's';
-    });
-```
+  ``` js
+  document.querySelectorAll('.pie').forEach(pie => {
+    const percent = parseFloat(pie.textContent) / 100;
+    pie.style.animationDelay = '-' + percent + 's';
+  });
+  ```

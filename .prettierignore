@@ -1,0 +1,7 @@
+# add files you wish to ignore here
+
+
+readme.md
+
+# dependencies
+/node_modules
