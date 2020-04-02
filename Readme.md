@@ -228,3 +228,92 @@
 
 19. [45°折角效果](Chapter%204/chapter%204.19/folded-corner.html) [30°折角效果](Chapter%204/chapter%204.19/folded-corner-realistic.html)
 
+## Chapter 5 字体排版
+
+20. [连字效果](Chapter%205/chapter%205.20/hyphenation.html)
+
+  ```css
+  /* Chrome only supported on Android & Mac platform!!!! */
+  hyphens: auto
+  ```
+
+21. [插入换行](Chapter%205/chapter%205.21/break-lines.html)
+
+  ```html
+    <dt>Email:</dt>
+    <dd>lea@verou.me</dd>
+    <dd>leaverou@mit.edu</dd>
+  ```
+
+  ```css{highlight=[6-9]}
+    dt, dd {
+      display: inline;
+      margin: 0;
+    }
+
+    dd + dt::before {
+      content: '\A';
+      white-space: pre;
+    }
+
+    dd + dd::before {
+      content: ', ';
+    }
+  ```
+
+22. [斑马条纹](Chapter%205/chapter%205.22/zebra-lines.html)
+
+  ```html
+    <pre>line 1
+      line 2
+      line 3</pre>
+  ```
+
+  ```css{highlight=[6,9]}
+    pre {
+      padding: 0.5em;
+      line-height: 1.5em;
+
+      /* 背景的大小是2倍的line-height */
+      background-size: 100% 3em;
+
+      /* 使用渐变模拟条纹 */
+      background-image: linear-gradient(gray 50%, gold 0);
+
+      /* 背景区域为内容盒子, 可以让条纹不受边框和内边距的影响 */
+      background-origin: content-box;
+    }
+  ```
+
+23. [调整tab的宽度](Chapter%205/chapter%205.23/tab-size.html)
+
+  ```css
+    /* IE,Edge不支持tab-size，Chrome不支持这个属性的动画，VS Code我的常用设置会把Tab转化为空格~~~ */
+    tab-size: 2;
+  ```
+
+26. [自定义下划线](Chapter%205/chapter%205.26/underlines.html)
+
+  ```html
+    <p>“The only way to <a>get rid of a temptation </a> is to <a>yield</a> to it.”</p>
+  ```
+
+  使用 `text-decoration: underline;` 无法自定义下划线的样式。
+  如果设置`border-bottom` 如果出现文本换行时，无法正确显示下划线。
+  最佳方法为使用`background-image: linear-gradient()`。
+
+  ```css
+    a {
+      background-position: bottom;
+
+      /* 生成实线样式的下划线 */
+      background-image: linear-gradient(gray, gray);
+      background-repeat: no-repeat;
+      background-size: 100% 2px;
+
+      /* 生成虚线样式的下划线 */
+      background: linear-gradient(90deg, gray 66%, transparent 0) repeat-x;
+      background-repeat: repeat-x;
+      background-size: 0.2em 1px;
+    }
+  ```
