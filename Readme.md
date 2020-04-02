@@ -317,3 +317,69 @@
       background-size: 0.2em 1px;
     }
   ```
+
+## Chapter 6 用户体验
+
+29. [鼠标光标](Chapter%206/chapter%206.29/disabled.html)
+
+  ```css
+    cursor: not-allowed;
+  ```
+
+  常用的`cursor`样式: `crosshair`, `help`, `move`, `pointer`, `wait`, `none`, `ew-resize`, `ns-resize`, `nesw-resize`, `nwse-resize`, `col-resize`, `row-resize`, `all-scroll`, `zoom-in`, `zoom-out`。
+
+30. 扩大可点击范围 [放大按钮方案](Chapter%206/chapter%206.30/hit-area-border.html) [伪元素方案(最佳方案)](Chapter%206/chapter%206.30/hit-area.html)
+
+  `border` 可以增加点击区域范围,但是效果不够好,会让按钮变大。
+  `box-shadow` 不能增加点击范围，不会让按钮变大。
+  伪元素能增加点击范围，而且不会让按钮变大，是最佳方案。
+
+  ```html
+    <button>+</button>
+  ```
+
+  ```css{highlight=[12,15-24]}
+    button {
+      cursor: pointer;
+      color: white;
+      padding: 0.3em 0.5em;
+      background: #58a;
+      border-radius: 50%;
+      margin-left: 10px;
+
+      /* border可以增加点击区域范围,但是效果不够好,会让按钮变大 */
+      border: 1px solid rgb(200, 200, 200);
+
+      position: relative;
+    }
+
+    /* 伪元素可以响应鼠标事件 */
+    button::before {
+      content: '';
+
+      position: absolute;
+      top: -10px;
+      bottom: -10px;
+      left: -10px;
+      right: -10px;
+    }
+  ```
+
+31. 自定义复选框 [复选框](Chapter%206/chapter%206.31/checkboxes.html) [开关式按钮](Chapter%206/chapter%206.31/toggle-buttons.html)
+
+  原生CSS不支持定义复选框的样式！hack 方法。
+
+32. [通过阴影弱化背景](Chapter%206/chapter%206.32/dimming-box-shadow.html)
+  
+  ```css
+    box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.8);
+  ```
+
+  1vmax相当于1vw和1vh两者中的较大值，100vw等于整个视口的宽度，100vh等于整个视口的高度。
+  box-shadow不会增加元素可点击的范围，所以可以遮蔽背景的事件！！！
+
+32. [通过模糊弱化背景](Chapter%206/chapter%206.33/deemphasizing-blur.html)
+
+  ```css
+     filter: blur(5px);
+  ```
