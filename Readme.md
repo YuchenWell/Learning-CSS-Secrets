@@ -183,14 +183,16 @@
   });
   ```
 
-  14. [单侧投影](Chapter%204/chapter%204.15/shadow-one-side.html) [邻边投影](Chapter%204/chapter%204.15/shadow-two-sides.html) [双侧投影](Chapter%204/chapter%204.15/shadow-opposite-sides.html)
+## Chapter 4 视觉效果
+
+14. [单侧投影](Chapter%204/chapter%204.15/shadow-one-side.html) [邻边投影](Chapter%204/chapter%204.15/shadow-two-sides.html) [双侧投影](Chapter%204/chapter%204.15/shadow-opposite-sides.html)
 
   ```css
   /* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */
   box-shadow: 0px 5px 4px -2px rgba(0, 0, 0, 0.5);;
   ```
 
-  16. [不规则投影](Chapter%204/chapter%204.16/drop-shadow.html)
+16. [不规则投影](Chapter%204/chapter%204.16/drop-shadow.html)
 
   ```css {highlight=[4-5]}
     /* 使用box-shadow会出错，无法符合要求 */
@@ -202,7 +204,7 @@
 
   [CSS filter 滤镜 (MDN)](https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter)
 
-  17. [染色效果(基于滤镜)](Chapter%204/chapter%204.17/color-tint-filter.html) [染色效果(基于混合模式)](Chapter%204/chapter%204.17/color-tint.html)
+17. [染色效果(基于滤镜)](Chapter%204/chapter%204.17/color-tint-filter.html) [染色效果(基于混合模式)](Chapter%204/chapter%204.17/color-tint.html)
 
   ```css {highlight=[5-6]}
   /* 基于混合模式 */
@@ -215,7 +217,7 @@
 
   `background-blend-mode` 定义该元素的背景图片和背景色如何混合。 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-blend-mode)
 
-  18. [毛玻璃效果](Chapter%204/chapter%204.18/frosted-glass.html) 
+18. [毛玻璃效果](Chapter%204/chapter%204.18/frosted-glass.html)
 
   ```css {highlight=[4]}
   /* 避免背景的模糊效果超过容器 */
@@ -224,6 +226,5 @@
   filter: blur(10px);
   ```
 
-  19. [45°折角效果](Chapter%204/chapter%204.19/folded-corner.html) [30°折角效果](Chapter%204/chapter%204.19/folded-corner-realistic.html)
+19. [45°折角效果](Chapter%204/chapter%204.19/folded-corner.html) [30°折角效果](Chapter%204/chapter%204.19/folded-corner-realistic.html)
 
-  
