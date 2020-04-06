@@ -25,6 +25,8 @@
       }
 
       main {
+        /* 不能使用calc(100% - 10em - 12em) */
+        /* 此方案不够灵活的原因是每次更改footer或者header的高度都需要同时更改main的高度。 */
         height: calc(100vh - 10em - 12em);
         box-sizing: border-box;
       }
