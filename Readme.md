@@ -240,62 +240,62 @@
 21. [插入换行](Chapter%205/chapter%205.21/break-lines.html)
 
   ```html
-    <dt>Email:</dt>
-    <dd>lea@verou.me</dd>
-    <dd>leaverou@mit.edu</dd>
+  <dt>Email:</dt>
+  <dd>lea@verou.me</dd>
+  <dd>leaverou@mit.edu</dd>
   ```
 
   ```css{highlight=[6-9]}
-    dt, dd {
-      display: inline;
-      margin: 0;
-    }
+  dt, dd {
+    display: inline;
+    margin: 0;
+  }
 
-    dd + dt::before {
-      content: '\A';
-      white-space: pre;
-    }
+  dd + dt::before {
+    content: '\A';
+    white-space: pre;
+  }
 
-    dd + dd::before {
-      content: ', ';
-    }
+  dd + dd::before {
+    content: ', ';
+  }
   ```
 
 22. [斑马条纹](Chapter%205/chapter%205.22/zebra-lines.html)
 
   ```html
-    <pre>line 1
-      line 2
-      line 3</pre>
+  <pre>line 1
+    line 2
+    line 3</pre>
   ```
 
   ```css{highlight=[6,9]}
-    pre {
-      padding: 0.5em;
-      line-height: 1.5em;
+  pre {
+    padding: 0.5em;
+    line-height: 1.5em;
 
-      /* 背景的大小是2倍的line-height */
-      background-size: 100% 3em;
+    /* 背景的大小是2倍的line-height */
+    background-size: 100% 3em;
 
-      /* 使用渐变模拟条纹 */
-      background-image: linear-gradient(gray 50%, gold 0);
+    /* 使用渐变模拟条纹 */
+    background-image: linear-gradient(gray 50%, gold 0);
 
-      /* 背景区域为内容盒子, 可以让条纹不受边框和内边距的影响 */
-      background-origin: content-box;
-    }
+    /* 背景区域为内容盒子, 可以让条纹不受边框和内边距的影响 */
+    background-origin: content-box;
+  }
   ```
 
 23. [调整tab的宽度](Chapter%205/chapter%205.23/tab-size.html)
 
   ```css
-    /* IE,Edge不支持tab-size，Chrome不支持这个属性的动画，VS Code我的常用设置会把Tab转化为空格~~~ */
-    tab-size: 2;
+  /* IE,Edge不支持tab-size，Chrome不支持这个属性的动画，VS Code我的常用设置会把Tab转化为空格~~~ */
+  tab-size: 2;
   ```
 
 26. [自定义下划线](Chapter%205/chapter%205.26/underlines.html)
 
   ```html
-    <p>“The only way to <a>get rid of a temptation </a> is to <a>yield</a> to it.”</p>
+  <p>“The only way to <a>get rid of a temptation </a> is to <a>yield</a> to it.”</p>
   ```
 
   使用 `text-decoration: underline;` 无法自定义下划线的样式。
@@ -303,19 +303,19 @@
   最佳方法为使用`background-image: linear-gradient()`。
 
   ```css
-    a {
-      background-position: bottom;
+  a {
+    background-position: bottom;
 
-      /* 生成实线样式的下划线 */
-      background-image: linear-gradient(gray, gray);
-      background-repeat: no-repeat;
-      background-size: 100% 2px;
+    /* 生成实线样式的下划线 */
+    background-image: linear-gradient(gray, gray);
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
 
-      /* 生成虚线样式的下划线 */
-      background: linear-gradient(90deg, gray 66%, transparent 0) repeat-x;
-      background-repeat: repeat-x;
-      background-size: 0.2em 1px;
-    }
+    /* 生成虚线样式的下划线 */
+    background: linear-gradient(90deg, gray 66%, transparent 0) repeat-x;
+    background-repeat: repeat-x;
+    background-size: 0.2em 1px;
+  }
   ```
 
 ## Chapter 6 用户体验
@@ -323,7 +323,7 @@
 29. [鼠标光标](Chapter%206/chapter%206.29/disabled.html)
 
   ```css
-    cursor: not-allowed;
+  cursor: not-allowed;
   ```
 
   常用的`cursor`样式: `crosshair`, `help`, `move`, `pointer`, `wait`, `none`, `ew-resize`, `ns-resize`, `nesw-resize`, `nwse-resize`, `col-resize`, `row-resize`, `all-scroll`, `zoom-in`, `zoom-out`。
@@ -335,34 +335,34 @@
   伪元素能增加点击范围，而且不会让按钮变大，是最佳方案。
 
   ```html
-    <button>+</button>
+  <button>+</button>
   ```
 
   ```css{highlight=[12,15-24]}
-    button {
-      cursor: pointer;
-      color: white;
-      padding: 0.3em 0.5em;
-      background: #58a;
-      border-radius: 50%;
-      margin-left: 10px;
+  button {
+    cursor: pointer;
+    color: white;
+    padding: 0.3em 0.5em;
+    background: #58a;
+    border-radius: 50%;
+    margin-left: 10px;
 
-      /* border可以增加点击区域范围,但是效果不够好,会让按钮变大 */
-      border: 1px solid rgb(200, 200, 200);
+    /* border可以增加点击区域范围,但是效果不够好,会让按钮变大 */
+    border: 1px solid rgb(200, 200, 200);
 
-      position: relative;
-    }
+    position: relative;
+  }
 
-    /* 伪元素可以响应鼠标事件 */
-    button::before {
-      content: '';
+  /* 伪元素可以响应鼠标事件 */
+  button::before {
+    content: '';
 
-      position: absolute;
-      top: -10px;
-      bottom: -10px;
-      left: -10px;
-      right: -10px;
-    }
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+  }
   ```
 
 31. 自定义复选框 [复选框](Chapter%206/chapter%206.31/checkboxes.html) [开关式按钮](Chapter%206/chapter%206.31/toggle-buttons.html)
@@ -372,14 +372,170 @@
 32. [通过阴影弱化背景](Chapter%206/chapter%206.32/dimming-box-shadow.html)
   
   ```css
-    box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.8);
   ```
 
   1vmax相当于1vw和1vh两者中的较大值，100vw等于整个视口的宽度，100vh等于整个视口的高度。
   box-shadow不会增加元素可点击的范围，所以可以遮蔽背景的事件！！！
 
-32. [通过模糊弱化背景](Chapter%206/chapter%206.33/deemphasizing-blur.html)
+33. [通过模糊弱化背景](Chapter%206/chapter%206.33/deemphasizing-blur.html)
 
   ```css
-     filter: blur(5px);
+  filter: blur(5px);
+  ```
+
+34. [滚动提示](Chapter%206/chapter%206.34/scrolling-hint.html)
+
+  使用了`background-attachment`属性的区别：
+
+  `fixed` 此关键字表示背景相对于**视口**固定。即使一个元素拥有滚动机制，背景也不会随着元素的内容滚动。
+
+  `local` 此关键字表示背景相对于**元素的内容**固定。如果一个元素拥有滚动机制，背景将会随着元素的内容滚动， 并且背景的绘制区域和定位区域是相对于可滚动的区域而不是包含他们的边框。
+
+  `scroll` 此关键字表示背景相对于**元素本身**固定， 而不是随着它的内容滚动（对元素边框是有效的）。
+
+35. 交互式图片对比控件 [CSS Resize方案](Chapter%206/chapter%206.35/image-slider.html) [范围输入控件方案](Chapter%206/chapter%206.35/image-slider-controller.html)
+
+## Chapter 7 结构和布局
+
+36. [自适应内部元素](Chapter%207/chapter%207.36/intrinsic-sizing.html)
+
+  ```css
+  /* IE和Edge截止2020-04都不支持 min-content!! */
+  width: min-content
+  ```
+
+37. [精确控制表格列宽](Chapter%207/chapter%207.37/table-column-width.html)
+
+  ```css
+  /* 为了使table-layout生效,需要设置width. */
+  width: 100%;
+
+  /** 表格和列的宽度通过表格的宽度来设置，某一列的宽度仅由该列首行的单元格决定。
+    * 在当前列中，该单元格所在行之后的行并不会影响整个列宽。
+    * 使用 “fixed” 布局方式时，整个表格可以在其首行被下载后就被解析和渲染。
+    * 这样对于 “automatic” 自动布局方式来说可以加速渲染。
+    * 任何一个包含溢出内容的单元格可以使用 overflow  属性控制是否允许内容溢出。
+    */
+  table-layout: fixed;
+  ```
+
+  控制文本行溢出行为`text-overflow`: `ellipsis`;
+
+38. [兄弟元素选择器](Chapter%207/chapter%207.38/styling-sibling-count.html)
+
+  方法1：
+
+  ```css
+  /* 相邻兄弟元素选择器 ~ , 可以选中在它之后的所有兄弟元素. (**不包含自身**) */
+  div > span:nth-child(4),
+  div > span:nth-child(4) ~ span {
+    background-color: #ae0055;
+  }
+  ```
+
+  方法2：
+
+  ```css
+  /* :nth-child(), n+b这种形式的表达式可以选中从第b个元素开始的所有子元素。(**包含自身**)*/
+  div > span:nth-child(n + 4) {
+    background-color: #ae0055;
+  }
+  ```
+
+39. [满幅的背景，定宽的内容](Chapter%207/chapter%207.39/fluid-fixed.html)
+
+  ```css
+  header,
+  section,
+  footer {
+    padding: 1em calc(50% - 350px);
+  }
+  ```
+
+40. 垂直居中
+
+  a. [基于绝对定位](Chapter%207/chapter%207.40/vertical-centering-abs.html)
+
+  ```css
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  ```
+
+  b. [基于视口单位vh](Chapter%207/chapter%207.40/vertical-centering-vh.html)
+
+  ```css
+  div {
+    margin: 50vh auto 0;
+    transform: translateY(-50%);
+  }
+  ```
+
+  c. [基于Flexbox](Chapter%207/chapter%207.40/vertical-centering-flex.html)
+  
+  ```css
+  /* 注意：设置在父级的元素上！！ */
+  body {
+    /* 设置水平垂直居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 设置父级元素的大小 */
+    min-height: 100vh;
+  }
+  ```
+
+41. 紧贴底部的页脚
+
+  a. [固定高度的解决方案](Chapter%207/chapter%207.41/sticky-footer-fixed.html)
+  
+  ```css
+  body {
+    margin: 0;
+  }
+
+  header {
+    height: 10em;
+    box-sizing: border-box;
+  }
+
+  footer {
+    height: 12em;
+    box-sizing: border-box;
+  }
+
+  main {
+    /* 不能使用calc(100% - 10em - 12em) */
+    /* 此方案不够灵活的原因是每次更改footer或者header的高度都需要同时更改main的高度。 */
+    height: calc(100vh - 10em - 12em);
+    box-sizing: border-box;
+  }
+  ```
+
+  b. [更灵活的解决方案](Chapter%207/chapter%207.41/sticky-footer.html)
+
+  ```css
+  body {
+    margin: 0;
+
+    display: flex;
+    /* CSS flex-flow 属性是 flex-direction 和 flex-wrap 的简写。 */
+    /* flex-flow默认属性是row */
+    flex-flow: column;
+
+    min-height: 100vh;
+  }
+
+  main {
+    /* CSS属性 flex 规定了弹性元素如何伸长或缩短以适应flex容器中的可用空间。
+     * 这是一个简写属性，用来设置 flex-grow, flex-shrink 与 flex-basis。
+     * 大多数情况下，开发者需要将 flex 设置为 auto，initial，none，或一个无单位正数
+     */
+    flex: 1;
+  }
   ```
