@@ -16,12 +16,33 @@
         overflow: auto;
         font: 100 200%/1.6 'Frutiger LT Std', sans-serif;
 
-        background:
-          linear-gradient(to bottom,white 15px, hsla(0, 0%, 100%, 0)) 0 0 / 100% 50px,
-          radial-gradient(at top, rgba(0, 0, 0, 0.2), transparent 70%) 0 0 / 100% 15px,
+        background-image:
+          /* 顶部用来遮盖滚动提示的白色矩形 */
+          linear-gradient(to bottom,white 15px, hsla(0, 0%, 100%, 0)),
+          /* 顶部的滚东提示 */
+          radial-gradient(at top, rgba(0, 0, 0, 0.2), transparent 70%),
 
-          linear-gradient(to top, white 15px, hsla(0, 0%, 100%, 0)) bottom / 100% 50px,
-          radial-gradient(at bottom, rgba(0, 0, 0, 0.2), transparent 70%) bottom / 100% 15px;
+          /* 底部用来遮盖滚动提示的白色矩形 */
+          linear-gradient(to top, white 15px, hsla(0, 0%, 100%, 0)),
+          /* 底部的滚东提示 */
+          radial-gradient(at bottom, rgba(0, 0, 0, 0.2), transparent 70%);
+
+        background-size:
+        /* 顶部用来遮盖滚动提示的白色矩形 */
+          100% 50px,
+          /* 顶部的滚东提示 */
+          100% 15px,
+
+          /* 底部用来遮盖滚动提示的白色矩形 */
+          100% 50px,
+          /* 底部的滚东提示 */
+          100% 15px;
+
+        background-position:
+          top,
+          top,
+          bottom,
+          bottom;
 
         background-repeat: no-repeat;
 
