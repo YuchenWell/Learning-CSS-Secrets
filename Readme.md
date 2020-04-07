@@ -539,3 +539,18 @@
     flex: 1;
   }
   ```
+
+## Chapter 8 过渡与动画
+
+42. 缓动效果
+    a. [弹跳动画](Chapter%208/chapter%208.42/bounce.html)
+    b. 弹性过渡
+
+43. 逐帧动画
+
+44. [闪烁效果](Chapter%208/chapter%208.44/blinking.html)
+
+45. [打字动画](Chapter%208/chapter%208.45/typing.html)
+  `ch` 一个字符的宽度.
+
+46. [状态平滑的动画](Chapter%208/chapter%208.46/smooth-state-animations.html)
